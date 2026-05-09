@@ -1213,3 +1213,70 @@ body {
 .mbl-footer-bg {
   display: none;
 }
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 9999;
+
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Shadow */
+  box-shadow:
+    0 8px 32px rgba(124, 58, 237, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  /* Animation */
+  transition: all 0.3s ease;
+}
+
+/* Arrow */
+.back-to-top span {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+/* Hover Effect */
+.back-to-top:hover {
+  transform: translateY(-6px) scale(1.08);
+  background: rgba(124, 58, 237, 0.25);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow:
+    0 12px 40px rgba(124, 58, 237, 0.45),
+    0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+/* Active Click Effect */
+.back-to-top:active {
+  transform: scale(0.95);
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.back-to-top {
+  animation: floatUp 3s ease-in-out infinite;
+}
